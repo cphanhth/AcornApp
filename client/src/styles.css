@@ -141,3 +141,116 @@ body {
     font-size: 0.9rem;
   }
   
+  .top-right-buttons {
+    /* Right-aligned container */
+    display: flex;
+    align-items: center;
+  }
+  
+  .login-button,
+  .logout-button {
+    /* Adjust as desired */
+    background-color: green;
+    color: white;
+    padding: 8px 12px;
+    margin-right: 20px; /* space from the right edge if needed */
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu-item.grayed-out {
+    /* example styling for the 'Add New' card */
+    background: #f0f0f0;
+    border: 1px dashed #ccc;
+  }
+  
+  .modal-overlay {
+    position: fixed;          /* Stays in place even if the page scrolls */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Make sure it’s on top of everything else */
+  }
+  
+  /* The modal "box" itself */
+  .modal-content {
+    background: #fff;
+    width: 600px;              /* Or any width that suits you */
+    max-width: 90%;           /* So it’s responsive on small screens */
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;       /* Allows positioning children absolutely if needed */
+  }
+  
+  /* Example header styling inside the modal */
+  .modal-content h2 {
+    margin-top: 0;  /* So there's no big gap above */
+  }
+  
+  /* If you want a close button in the top-right corner */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  /* 1) Layout for the "Add New Menu Item" modal form */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between rows */
+}
+
+.modal-form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-form-row .form-name {
+  flex: 1; /* Make the name field expand to fill space */
+}
+
+.modal-form-row .form-price {
+  width: 120px; /* fixed width for price input */
+}
+
+.description-input {
+  width: 100%;
+  min-height: 60px;
+}
+
+/* Put the Save/Cancel buttons side-by-side in the modal */
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start; /* or 'center', etc. */
+}
+
+/* 2) Align "Add to Cart" & "Delete" side-by-side under each menu item */
+.menu-item-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center; /* or 'flex-start', if you prefer left-aligned */
+  margin-top: 10px;
+}
+
+/* Override the default .button margin so they're side by side */
+.menu-item-buttons .button {
+  display: inline-block;
+  margin: 0; 
+}
+
+/* If you want to override the default for the modal buttons too, you can do: */
+.modal-buttons .button {
+  margin: 0;
+}
